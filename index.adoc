@@ -1,0 +1,75 @@
+= Asciidoc Playground
+:toc:
+:icons: font
+//:source-highlighter: highlightjs
+:source-highlighter: rouge
+:docinfo: private-head
+
+== HTML
+
+Eigene Stylesheets und HTML-Codes können über ein https://asciidoctor.org/docs/user-manual/#docinfo-file[Docinfo File] und https://asciidoctor.org/docs/user-manual/#pass-blocks[Passthrough Blocks] in das Asciidoc-Document aufgenommen.
+
+[%collapsible]
+====
+=====
+._docinfo.html_
+[source,html]
+----
+<link rel="stylesheet" media="screen" type="text/css" href="file.css" />
+----
+
+.Variante: html-Code
+[source,asciidoc]
+----
+++++
+<div class=""><p>...</p></div>
+++++
+----
+
+.Variante: html-Datei
+[source,asciidoc]
+----
+++++
+\include::file.html[]
+++++
+----
+=====
+====
+
+=== Bilanztabelle
+
+++++
+include::html/my-balanceTable.html[]
+++++
+
+////
+._docinfo.html_
+[%collapsible]
+====
+[source,html]
+----
+include::index-docinfo.html[tags=my-balanceTable]
+----
+====
+////
+
+.CSS
+[%collapsible]
+====
+[source,css]
+----
+include::html/my-balanceTable.css[]
+----
+====
+
+.HTML
+[%collapsible]
+====
+[source,html]
+----
+include::html/my-balanceTable.html[lines=2..-1]
+----
+====
+
+== Test
+...
