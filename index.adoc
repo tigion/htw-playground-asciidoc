@@ -1,9 +1,10 @@
-= Asciidoc Playground
+= AsciiDoc Playground
 :toc:
 :icons: font
 //:source-highlighter: highlightjs
 :source-highlighter: rouge
 :docinfo: private-head
+:nofooter:
 
 == HTML
 
@@ -71,5 +72,7 @@ include::html/my-balanceTable.html[lines=2..-1]
 ----
 ====
 
-== Test
-...
+
+
+== {blank}
+link:https://github.com/tigion/htw-playground-asciidoc[image:https://img.shields.io/static/v1??style=flat&logo=github&label=GitHub&message=htw-playground-asciidoc&color=green[]] link:http://asciidoctor.org/[image:https://img.shields.io/badge/Asciidoctor-v{asciidoctor-version}-green.svg[]]

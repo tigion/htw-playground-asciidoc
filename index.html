@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<title>Asciidoc Playground</title>
+<title>AsciiDoc Playground</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,20 +436,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- tag::my-balanceTable[] -->
 <link rel="stylesheet" media="screen" type="text/css" href="html/my-balanceTable.css" />
+<!-- end::my-balanceTable[] -->
 </head>
 <body class="article">
 <div id="header">
-<h1>Asciidoc Playground</h1>
+<h1>AsciiDoc Playground</h1>
 <div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
+<div id="toctitle">Inhaltsverzeichnis</div>
 <ul class="sectlevel1">
 <li><a href="#_html">HTML</a>
 <ul class="sectlevel2">
-<li><a href="#_bilanz_tabelle">Bilanz Tabelle</a></li>
+<li><a href="#_bilanztabelle">Bilanztabelle</a></li>
 </ul>
 </li>
-<li><a href="#_test">Test</a></li>
+<li><a href="#"></a></li>
 </ul>
 </div>
 </div>
@@ -457,9 +459,43 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_html">HTML</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Eigene Stylesheets und HTML-Codes können über ein <a href="https://asciidoctor.org/docs/user-manual/#docinfo-file">Docinfo File</a> und <a href="https://asciidoctor.org/docs/user-manual/#pass-blocks">Passthrough Blocks</a> in das Asciidoc-Document aufgenommen werden.</p>
+</div>
+<details>
+<summary class="title">Details</summary>
+<div class="content">
+<div class="exampleblock">
+<div class="content">
+<div class="listingblock">
+<div class="title"><em>docinfo.html</em></div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="html"><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">media=</span><span class="s">"screen"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"file.css"</span> <span class="nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Variante: html-Code</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="asciidoc">++++
+&lt;div class=""&gt;&lt;p&gt;...&lt;/p&gt;&lt;/div&gt;
+++++</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Variante: html-Datei</div>
+<div class="content">
+<pre class="rouge highlight"><code data-lang="asciidoc">++++
+include::file.html[]
+++++</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details>
 <div class="sect2">
-<h3 id="_bilanz_tabelle">Bilanz Tabelle</h3>
-<!--<link rel="stylesheet" media="screen" type="text/css" href="html/my-balanceTable.css" />-->
+<h3 id="_bilanztabelle">Bilanztabelle</h3>
+<link rel="stylesheet" media="screen" type="text/css" href="html/my-balanceTable.css" />
 <div class="my-balanceTable"  style="width: 400px">
     <div class="header">
         <span class="leftTitle">H</span>
@@ -476,32 +512,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
     </div>
 </div>
 <details>
-<summary class="title">my-balanceTable.html</summary>
-<div class="content">
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="html"><span class="c">&lt;!--&lt;link rel="stylesheet" media="screen" type="text/css" href="html/my-balanceTable.css" /&gt;--&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"my-balanceTable"</span>  <span class="na">style=</span><span class="s">"width: 400px"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"leftTitle"</span><span class="nt">&gt;</span>H<span class="nt">&lt;/span&gt;</span>
-        Bilanz
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"rightTitle"</span><span class="nt">&gt;</span>S<span class="nt">&lt;/span&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"left"</span><span class="nt">&gt;</span>
-        1000<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
-        100
-    <span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"right"</span><span class="nt">&gt;</span>
-        500<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
-        20
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre>
-</div>
-</div>
-</div>
-</details>
-<details>
-<summary class="title">my-balanceTable.css</summary>
+<summary class="title">CSS</summary>
 <div class="content">
 <div class="listingblock">
 <div class="content">
@@ -547,13 +558,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </details>
 <details>
-<summary class="title">Verwendung im AsciiDoc Dokument:</summary>
+<summary class="title">HTML</summary>
 <div class="content">
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="asciidoc">++++
-include::html/my-balanceTable.html[]
-++++</code></pre>
+<pre class="rouge highlight"><code data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"my-balanceTable"</span>  <span class="na">style=</span><span class="s">"width: 400px"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"leftTitle"</span><span class="nt">&gt;</span>H<span class="nt">&lt;/span&gt;</span>
+        Bilanz
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"rightTitle"</span><span class="nt">&gt;</span>S<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"left"</span><span class="nt">&gt;</span>
+        1000<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+        100
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"right"</span><span class="nt">&gt;</span>
+        500<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>
+        20
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -562,17 +585,12 @@ include::html/my-balanceTable.html[]
 </div>
 </div>
 <div class="sect1">
-<h2 id="_test">Test</h2>
+<h2 id=""></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>&#8230;&#8203;</p>
+<p><a href="https://github.com/tigion/htw-playground-asciidoc"><span class="image"><img src="https://img.shields.io/static/v1??style=flat&amp;logo=github&amp;label=GitHub&amp;message=htw-playground-asciidoc&amp;color=green" alt="v1??style=flat&amp;logo=github&amp;label=GitHub&amp;message=htw playground asciidoc&amp;color=green"></span></a> <a href="http://asciidoctor.org/"><span class="image"><img src="https://img.shields.io/badge/Asciidoctor-v2.0.10-green.svg" alt="Asciidoctor v2.0.10 green"></span></a></p>
 </div>
 </div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Last updated 2019-11-18 14:20:54 +0100
 </div>
 </div>
 <style>
